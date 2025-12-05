@@ -1,15 +1,15 @@
 # ICS Attack Simulation, Forensic Analysis, and Incident Response Playbook for an Electrical Distribution Substation
 
-Trevor Ritchie
-CSCI 632: Data Communications and Networking
-The Citadel Military College of SC
-2025-12-09
+Trevor Ritchie  
+CSCI 632: Data Communications and Networking  
+The Citadel Military College of SC  
+2025-12-09  
 
 ---
 
 ## Summary
 
-Multi-stage ICS cyberattack simulation against 69kV/13.8kV distribution substation: IT-to-OT pivot culminating in unauthorized Modbus PLC   manipulation. Includes PCAP forensic analysis, NIST incident response playbook, attack scripts, and real-world impact assessment for critical infrastructure security education.
+Multi-stage ICS cyberattack simulation against 69kV/13.8kV distribution substation: IT-to-OT pivot culminating in unauthorized Modbus PLC manipulation. Includes PCAP forensic analysis, NIST incident response playbook, attack scripts, and real-world impact assessment for critical infrastructure security education.
 
 **Achievements:**
 - Virtualized ICS network with IT and OT zones 
@@ -19,7 +19,7 @@ Multi-stage ICS cyberattack simulation against 69kV/13.8kV distribution substati
 - Incident response playbook following NIST framework
 - Real-world impact analysis demonstrating potential consequences
 
-[Full Technical Process Notes](Technical_Process_Notes.md)
+[Full Technical Process Notes](Technical_Process_Notes.md)  
 [Acknowledgement of Limitations and Unrealistic Elements](Limitations_and_Unrealistic_Elements.md)
 
 ---
