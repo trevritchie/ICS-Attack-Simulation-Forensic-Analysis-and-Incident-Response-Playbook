@@ -491,29 +491,27 @@ This project was conducted in a virtualized laboratory environment with intentio
 
 ### Standards and Frameworks
 
-- **[Purdue Model for Industrial Control Systems](https://www.zscaler.com/resources/security-terms-glossary/what-is-purdue-model):** A foundational framework for ICS network segmentation.
-- **[IEC 62443-3-2](https://www.iec.ch/standardsdev/discover/explained.htm?std=IEC%2062443-3-2):** Security for industrial automation and control systems - Security risk assessment and system design
-- **[NIST SP 800-82 Rev. 3](https://csrc.nist.gov/publications/detail/sp/800-82/rev-3/final):** Guide to Operational Technology (OT) Security
-- **[NERC CIP-005-7](https://www.nerc.com/pa/Stand/Reliability%20Standards/CIP-005-7.pdf):** Electronic Security Perimeter(s)
-- **[NERC CIP-007-6](https://www.nerc.com/pa/Stand/Reliability%20Standards/CIP-007-6.pdf):** Systems Security Management
-- **[IEC 61511](https://www.iec.ch/homepage_news/2016/news_0816_2.html):** Functional safety - Safety instrumented systems for the process industry sector
+- **[Purdue Model for Industrial Control Systems]([https://www.zscaler.com/resources/security-terms-glossary/what-is-purdue-model](https://www.energy.gov/sites/default/files/2022-10/Infra_Topic_Paper_4-14_FINAL.pdf)):** A foundational framework for ICS network segmentation.
+- **[IEC 62443-3-2](https://webstore.iec.ch/en/publication/30727):** Security for industrial automation and control systems - Security risk assessment and system design
+- **[NIST SP 800-82 Rev. 3](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r3.pdf):** Guide to Operational Technology (OT) Security
+- **[NERC CIP-005-7](https://www.nerc.com/globalassets/standards/reliability-standards/cip/cip-005-7.pdf):** Electronic Security Perimeter(s)
+- **[NERC CIP-007-6](https://www.nerc.com/standards/reliability-standards/cip/cip-007-6):** Systems Security Management
 - **[MITRE ATT&CK for ICS](https://attack.mitre.org/matrices/ics/):** A knowledge base of adversary tactics and techniques for industrial control systems.
 - **[NIST Cybersecurity Framework](https://www.nist.gov/cyberframework):** A framework for improving critical infrastructure cybersecurity.
 
 ### Real-World ICS Incidents Referenced
 
 - **[Stuxnet (2010)](https://www.britannica.com/technology/Stuxnet):** Iranian uranium enrichment facility - Physical destruction via PLC manipulation
-- **[CRASHOVERRIDE/Industroyer (2016)](https://www.wired.com/story/crash-override-malware-russia-ukraine-grid-attack-code/):** Ukraine power grid - Custom ICS protocol malware
-- **[TRITON/TRISIS (2017)](https://www.wired.com/story/triton-malware-attack-saudi-arabia-russia-sis/):** Saudi petrochemical plant - First malware targeting safety systems
-- **[Colonial Pipeline (2021)](https://www.cisa.gov/news-events/news/understanding-and-responding-colonial-pipeline-incident):** U.S. fuel pipeline - Operational disruption from IT-OT pivot
+- **[CRASHOVERRIDE/Industroyer (2016)](https://en.wikipedia.org/wiki/Industroyer):** Ukraine power grid - Custom ICS protocol malware
+- **[TRITON/TRISIS (2017)](https://en.wikipedia.org/wiki/Triton_(malware)):** Saudi petrochemical plant - First malware targeting safety systems
+- **[Colonial Pipeline (2021)](https://en.wikipedia.org/wiki/Colonial_Pipeline_ransomware_attack):** U.S. fuel pipeline - Operational disruption from IT-OT pivot
 
 ### Tools and Technologies
 
-- **Virtualization:** [VMware Workstation Pro](https://www.vmware.com/products/workstation-pro.html), [GNS3](https://www.gns3.com/)
-- **Operating Systems:** [Kali Linux](https://www.kali.org/), [Windows 10](https://www.microsoft.com/en-us/windows), [Ubuntu Server/Desktop](https://ubuntu.com/), [pfSense](https://www.pfsense.org/)
+- **Virtualization:** [GNS3](https://docs.gns3.com/docs/), VMware Workstation Pro
+- **Operating Systems:** Kali Linux, Windows 10, Ubuntu Server/Desktop, pfSense
 - **ICS Protocols:** [Modbus/TCP (pymodbus library)](https://pymodbus.readthedocs.io/en/latest/)
-- **Analysis Tools:** [Wireshark](https://www.wireshark.org/), [Nmap](https://nmap.org/), [Hydra](https://github.com/vanhauser-thc/thc-hydra), [SSH](https://www.openssh.com/), [tcpdump](https://www.tcpdump.org/)
-- **Frameworks:** MITRE ATT&CK for ICS, NIST Cybersecurity Framework
+- **Analysis Tools:** Wireshark, Nmap, Hydra, SSH
 
 ---
 
