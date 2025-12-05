@@ -52,14 +52,7 @@ Some key information to be gathered to determine if the alert is a false positiv
 
 ## Laboratory Context and Limitations
 
-**Note:** This playbook is based on a simulated ICS attack in a virtualized laboratory environment. Several aspects have been simplified for educational purposes, including:
-- Software-based PLC simulation (pymodbus) rather than physical industrial controllers
-- Direct IT-to-OT SSH access (Purdue Model violation for demonstration purposes)
-- No endpoint security (EDR, antivirus, application whitelisting)
-- No industrial intrusion detection system (manual PCAP analysis only)
-- Virtualized environment without physical process consequences
-
-For comprehensive documentation of lab limitations and how production critical infrastructure environments differ, see: [[Limitations_and_Unrealistic_Elements]]
+**Note:** This playbook is based on a simulated ICS attack in a virtualized laboratory environment. Several aspects have been simplified for educational purposes. [How production critical infrastructure environments differ.](Limitations_and_Unrealistic_Elements.md)
 
 ---
 
@@ -753,7 +746,3 @@ This evidence clearly distinguishes malicious activity from legitimate operation
 |---------|------|--------|---------|
 | 1.0 | 2025-11-25 | OT Security Team | Initial playbook creation for unauthorized Modbus coil manipulation detection |
 | 2.0 | 2025-12-04 | OT Security Team | Updated with specific implementation details from lab exercise: added 69kV/13.8kV distribution substation context, network topology (IT: 192.168.10.0/24, OT: 192.168.20.0/24), four-phase attack pattern signature, specific timing intervals (0.2-0.3s attack vs. 4s baseline), coil address mappings, PCAP/video file references, and real-world impact analysis |
-
----
-
-**END OF PLAYBOOK**
