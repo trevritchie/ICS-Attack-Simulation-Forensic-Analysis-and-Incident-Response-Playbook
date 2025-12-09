@@ -111,6 +111,8 @@ The project uses the Modbus/TCP protocol for communication between the HMI and P
 
 The attack follows a three-phase progression through the network, demonstrating how an adversary can pivot from IT systems to compromise critical OT infrastructure.
 
+[Unlisted YT vid of all phases](https://youtu.be/VosK25NYeZg)
+
 ### Phase 1: Initial Compromise (IT Zone)
 
 **Video:** [Phase 1 - RDP Attack](screen-recordings/phase1_rdp_attack.mp4)
