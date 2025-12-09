@@ -492,8 +492,6 @@ if __name__ == "__main__":
 python3 ~/legitimate_hmi.py
 ```
 
-**Screenshot: [PLACEHOLDER - HMI script execution output showing baseline operations]**
-
 ---
 
 ### Testing Modbus Communication

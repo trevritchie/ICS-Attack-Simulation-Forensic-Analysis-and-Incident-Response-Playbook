@@ -52,7 +52,7 @@ Some key information to be gathered to determine if the alert is a false positiv
 
 ## Laboratory Context and Limitations
 
-**Note:** This playbook is based on a simulated ICS attack in a virtualized laboratory environment. Several aspects have been simplified for educational purposes. [How production critical infrastructure environments differ.](Limitations_and_Unrealistic_Elements.md)
+**Note:** This playbook is based on a simulated ICS attack in a virtualized laboratory environment. Several aspects have been simplified for educational purposes. [How production critical infrastructure environments differ.](Concise_Limitations_and_Unrealistic_Elements.md)
 
 ---
 

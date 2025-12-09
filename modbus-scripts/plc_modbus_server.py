@@ -33,7 +33,7 @@ def initialize_substation_datastore():
       10-14: Capacitor Bank Switches (0=Offline, 1=Online)
       15-19: Transformer Cooling Pump Controls
       20-29: Disconnect Switches
-      99:    Emergency Main Breaker Trip (CRITICAL SAFETY SYSTEM)
+      50:    Emergency Main Breaker Trip (CRITICAL SAFETY SYSTEM)
 
     DISCRETE INPUTS (Read-Only Status Indicators):
       0-9:   Circuit Breaker Position Feedback (0=Open, 1=Closed)
@@ -126,7 +126,7 @@ def run_substation_server():
     print("[*] Simulated Equipment:")
     print("    - 10x Distribution Feeder Circuit Breakers (Coils 0-9)")
     print("    - 5x Capacitor Bank Switches (Coils 10-14)")
-    print("    - Emergency Main Breaker Trip (Coil 99)")
+    print("    - Emergency Main Breaker Trip (Coil 50)")
     print("    - Real-time Voltage/Current Monitoring")
     print("    - Power Quality Measurements")
     print("[*] Initial State: Feeder 1 ENERGIZED, All others OFFLINE")

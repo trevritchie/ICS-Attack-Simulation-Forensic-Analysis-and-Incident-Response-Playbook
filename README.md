@@ -11,7 +11,7 @@ The Citadel Military College of SC
 
 Multi-stage ICS cyberattack simulation against 69kV/13.8kV distribution substation: IT-to-OT pivot culminating in unauthorized Modbus PLC manipulation. Includes PCAP forensic analysis, NIST incident response playbook, attack scripts, and real-world impact assessment for critical infrastructure security education.
 
-**Achievements:**
+**Main Results:**
 - Virtualized ICS network with IT and OT zones 
 	- Learned about the Purdue Model for ICS Security
 - Multi-stage attack demonstration: IT compromise -> lateral movement -> OT impact
@@ -19,8 +19,11 @@ Multi-stage ICS cyberattack simulation against 69kV/13.8kV distribution substati
 - Incident response playbook following NIST framework
 - Real-world impact analysis demonstrating potential consequences
 
-[Full Technical Process Notes](Technical_Process_Notes.md)  
-[Acknowledgement of Limitations and Unrealistic Elements](Limitations_and_Unrealistic_Elements.md)
+In the process of creating a vulnerable lab network...  
+[Full Technical Process Notes](Technical_Process_Notes.md)   
+
+I learned about what really should be done in production:    
+[Acknowledgement of Limitations and Unrealistic Elements](Concise_Limitations_and_Unrealistic_Elements.md) 
 
 ---
 
@@ -100,7 +103,7 @@ The project uses the Modbus/TCP protocol for communication between the HMI and P
 - Write operations use Function Code 5 (single coil) or 15 (multiple coils)
 - Read operations use Function Code 1 (coils) or 3/4 (registers)
 
-**Detailed setup documentation:** [Technical Process Notes](Technical_Process_Notes.md#setting-up-modbustcp-simulation)
+**More detailed:** [Technical Process Notes](Technical_Process_Notes.md#setting-up-modbustcp-simulation)
 
 ---
 
@@ -249,16 +252,16 @@ Comprehensive Wireshark analysis comparing baseline legitimate HMI operations ag
 
 ### Forensic Evidence Comparison Table
 
-| Indicator | Baseline (Normal) | Attack (Malicious) | Analysis |
-|-----------|-------------------|--------------------| ---------|
-| **Total Packets** | 25 packets | 288 packets | **11.5x increase** - burst activity |
-| **Write Timing** | 4-second delays | 0.2-0.3 second delays | **13-20x faster** - scripted automation |
-| **Operation Pattern** | Read-before-write | Write-only (blind injection) | No verification - reckless behavior |
-| **Function Code 5** | 2 operations | Numerous operations | Emergency breaker rapid toggling |
-| **Function Code 15** | 0 instances | Multiple instances | **CRITICAL SIGNATURE** - mass writes |
-| **Coil Address Range** | 0-4 (operational) | 0-29, 50 (safety systems) | Expanded to critical infrastructure |
-| **Read Operations** | Continuous monitoring | Minimal/none | No process awareness |
-| **Traffic Pattern** | Steady polling | Burst of rapid writes | Fundamentally incompatible behavior |
+| Indicator              | Baseline (Normal)     | Attack (Malicious)           | Analysis                                |
+| ---------------------- | --------------------- | ---------------------------- | --------------------------------------- |
+| **Total Packets**      | 25 packets            | 288 packets                  | **11.5x increase** - burst activity     |
+| **Write Timing**       | 4-second delays       | 0.2-0.3 second delays        | **13-20x faster** - scripted automation |
+| **Operation Pattern**  | Read-before-write     | Write-only (blind injection) | No verification - reckless behavior     |
+| **Function Code 5**    | 2 operations          | Numerous operations          | Emergency breaker rapid toggling        |
+| **Function Code 15**   | 0 instances           | Multiple instances           | **CRITICAL SIGNATURE** - mass writes    |
+| **Coil Address Range** | 0-4 (operational)     | 0-29, 50 (safety systems)    | Expanded to critical infrastructure     |
+| **Read Operations**    | Continuous monitoring | Minimal/none                 | No process awareness                    |
+| **Traffic Pattern**    | Steady polling        | Burst of rapid writes        | Fundamentally incompatible behavior     |
 
 ### Critical Attack Indicators
 
@@ -308,7 +311,7 @@ Comprehensive Wireshark analysis comparing baseline legitimate HMI operations ag
 ### Detailed Analysis Documents
 
 **Complete forensic evidence with annotated Wireshark screenshots:**
-- [Baseline Modbus Traffic Analysis](older%20plans/forensic-analysis/Baseline_Analysis.md) - 9 evidence screenshots documenting normal operations
+- [Baseline Modbus Traffic Analysis](forensic-analysis/Baseline_Analysis.md) - 9 evidence screenshots documenting normal operations
 - [Phase 3 Modbus Attack Analysis](forensic-analysis/Attack_Analysis.md) - 12 evidence screenshots documenting attack indicators
 
 ---
@@ -398,21 +401,21 @@ A comprehensive incident response playbook was developed following the NIST Cybe
 
 All packet captures stored in [`pcaps/`](pcaps/) directory:
 
-| File | Description | Size |
-|------|-------------|------|
-| `normal_modbus_traffic.pcapng` | Baseline legitimate HMI operations | - |
-| `phase1_rdp_attack.pcapng` | RDP credential attack and connection | - |
-| `phase2_ssh_pivot.pcapng` | SSH lateral movement from IT to OT | - |
-| `phase3_modbus_attack.pcapng` | Malicious Modbus coil manipulation | - |
+| File                           | Description                          | Size |
+| ------------------------------ | ------------------------------------ | ---- |
+| `normal_modbus_traffic.pcapng` | Baseline legitimate HMI operations   | -    |
+| `phase1_rdp_attack.pcapng`     | RDP credential attack and connection | -    |
+| `phase2_ssh_pivot.pcapng`      | SSH lateral movement from IT to OT   | -    |
+| `phase3_modbus_attack.pcapng`  | Malicious Modbus coil manipulation   | -    |
 
 ### Forensic Analysis Reports
 
 Detailed Wireshark analysis documents with annotated screenshots:
 
-| File | Description | Evidence Count |
-|------|-------------|----------------|
-| [`baseline_analysis.md`](older%20plans/forensic-analysis/Baseline_Analysis.md) | Normal Modbus traffic baseline | 9 screenshots |
-| [`attack_analysis.md`](forensic-analysis/Attack_Analysis.md) | Phase 3 attack forensic evidence | 12 screenshots |
+| File                                                                           | Description                      | Evidence Count |
+| ------------------------------------------------------------------------------ | -------------------------------- | -------------- |
+| [`baseline_analysis.md`](older%20plans/forensic-analysis/Baseline_Analysis.md) | Normal Modbus traffic baseline   | 9 screenshots  |
+| [`attack_analysis.md`](forensic-analysis/Attack_Analysis.md)                   | Phase 3 attack forensic evidence | 12 screenshots |
 
 **Key Forensic Findings:**
 - Timing anomaly: 13-20x faster than baseline (0.2-0.3s vs 4s intervals)
@@ -425,12 +428,12 @@ Detailed Wireshark analysis documents with annotated screenshots:
 
 All screen recordings stored in [`screen-recordings/`](screen-recordings/) directory:
 
-| File | Description | Duration |
-|------|-------------|----------|
-| `capturing_normal_modbus_traffic.mp4` | Baseline traffic capture process | - |
-| `phase1_rdp_attack.mp4` | IT zone initial compromise | - |
-| `phase2_ssh_pivot.mp4` | IT-to-OT lateral movement | - |
-| `phase3_modbus_attack.mp4` | OT impact and PLC manipulation | - |
+| File                                  | Description                      | Duration |
+| ------------------------------------- | -------------------------------- | -------- |
+| `capturing_normal_modbus_traffic.mp4` | Baseline traffic capture process | -        |
+| `phase1_rdp_attack.mp4`               | IT zone initial compromise       | -        |
+| `phase2_ssh_pivot.mp4`                | IT-to-OT lateral movement        | -        |
+| `phase3_modbus_attack.mp4`            | OT impact and PLC manipulation   | -        |
 
 ### Scripts and Logs
 
@@ -465,7 +468,7 @@ This project was conducted in a virtualized laboratory environment with intentio
 | **Safety Systems** | Not implemented | Dedicated SIS (Triconex, GuardLogix) per IEC 61511 |
 | **Physical Process** | No operational impact | Real equipment damage, safety hazards |
 
-**Comprehensive Limitations Documentation:** [Lab Limitations and Unrealistic Elements](Limitations_and_Unrealistic_Elements.md)
+**Comprehensive Limitations Documentation:** [Lab Limitations and Unrealistic Elements](Concise_Limitations_and_Unrealistic_Elements.md)
 
 ### Critical Differences
 
@@ -483,7 +486,7 @@ This project was conducted in a virtualized laboratory environment with intentio
 
 - **[Technical Process Notes](Technical_Process_Notes.md)** - Verbose implementation details, setup procedures, attack execution, and forensic analysis
 - **[Incident Response Playbook](Modbus_Coil_Manipulation_Playbook.md)** - NIST-aligned playbook for detecting and responding to unauthorized Modbus attacks
-- **[Lab Limitations](Limitations_and_Unrealistic_Elements.md)** - Comprehensive analysis of how production environments differ from this lab
+- **[Lab Limitations](Concise_Limitations_and_Unrealistic_Elements.md)** - Comprehensive analysis of how production environments differ from this lab
 
 ---
 
@@ -535,3 +538,5 @@ This capstone project successfully demonstrates the critical security challenges
 5. Establish baseline traffic profiles and anomaly detection
 6. Conduct regular incident response exercises with operations teams
 7. Maintain offline backups and validated restoration procedures
+
+[Acknowledgement of Limitations and Unrealistic Elements](Concise_Limitations_and_Unrealistic_Elements.md) 

