@@ -733,16 +733,16 @@ This evidence clearly distinguishes malicious activity from legitimate operation
 
 ## Document Control
 
-**Playbook Version:** 2.0
-**Created:** 2025-11-25
-**Last Reviewed:** 2025-12-04
-**Next Review Date:** 2026-06-04
-**Author:** OT Security Team
+**Playbook Version:** 2.0  
+**Created:** 2025-11-25  
+**Last Reviewed:** 2025-12-04  
+**Next Review Date:** 2026-06-04  
+**Author:** Trevor Ritchie  
 **Approval Status:** Educational/Lab Use
 
 ### Revision History
 
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | 2025-11-25 | OT Security Team | Initial playbook creation for unauthorized Modbus coil manipulation detection |
-| 2.0 | 2025-12-04 | OT Security Team | Updated with specific implementation details from lab exercise: added 69kV/13.8kV distribution substation context, network topology (IT: 192.168.10.0/24, OT: 192.168.20.0/24), four-phase attack pattern signature, specific timing intervals (0.2-0.3s attack vs. 4s baseline), coil address mappings, PCAP/video file references, and real-world impact analysis |
+| 1.0 | 2025-11-25 | Trevor Ritchie | Initial playbook creation for unauthorized Modbus coil manipulation detection |
+| 2.0 | 2025-12-04 | Trevor Ritchie | Updated with specific implementation details from lab exercise: added 69kV/13.8kV distribution substation context, network topology (IT: 192.168.10.0/24, OT: 192.168.20.0/24), four-phase attack pattern signature, specific timing intervals (0.2-0.3s attack vs. 4s baseline), coil address mappings, PCAP/video file references, and real-world impact analysis |
